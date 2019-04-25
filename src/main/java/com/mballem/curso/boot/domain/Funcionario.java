@@ -8,7 +8,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.Valid;
@@ -22,6 +21,9 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 
+import lombok.Data;
+
+@Data
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "FUNCIONARIOS")
@@ -56,7 +58,7 @@ public class Funcionario extends AbstractEntity<Long>{
 	@ManyToOne
 	@JoinColumn(name = "cargo_if_fk")
 	private Cargo cargo;
-
+/*
 	public String getNome() {
 		return nome;
 	}
@@ -104,4 +106,5 @@ public class Funcionario extends AbstractEntity<Long>{
 	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}
+	*/
 }

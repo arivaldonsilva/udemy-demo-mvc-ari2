@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.resource.HttpResource;
 
 import com.mballem.curso.boot.domain.Departamento;
 import com.mballem.curso.boot.service.DepartamentoService;
@@ -72,5 +74,10 @@ public class DepartamentoController {
 			model.addAttribute("success", "Departamento excluído com sucesso!");
 		}
 		return listar(model);
+	}
+	
+	@GetMapping("/teste")
+	public ResponseEntity<String> getLista(){
+		return ResponseEntity.ok().body("teste");
 	}
 }

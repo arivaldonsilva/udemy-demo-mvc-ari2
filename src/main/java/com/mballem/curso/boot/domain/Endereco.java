@@ -10,6 +10,9 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.Data;
+
+@Data
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "ENDERECOS")
@@ -47,7 +50,7 @@ public class Endereco extends AbstractEntity<Long> {
 	
 	@Size(max = 255)
 	private String complemento;
-
+/*
 	public String getLogradouro() {
 		return logradouro;
 	}
@@ -102,5 +105,5 @@ public class Endereco extends AbstractEntity<Long> {
 
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
-	}
+	}*/
 }
